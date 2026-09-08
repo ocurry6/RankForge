@@ -1,0 +1,304 @@
+main {
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #111827;
+  color: white;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin: 0; 
+}
+
+p {
+  color: #b8c0cc;
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+.tier-row {
+  display: flex;
+  min-height: 120px;
+  margin-top: 32px;
+  border: 2px solid #374151;
+  border-radius: 8px;
+  overflow: hidden; 
+}
+
+.tier-label {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff5c5c;
+  color:#111827;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.tier-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #1f2937;
+  color: #9ca3af;
+}
+
+.tier-row:nth-child(1) .tier-label {
+  background-color: #ff5c5c; /* S tier */
+}
+.tier-row:nth-child(2) .tier-label {
+  background-color: #ffd93d; /* A tier */
+}
+.tier-row:nth-child(3) .tier-label {
+  background-color: #4ade80; /* B tier */
+}
+.tier-row:nth-child(4) .tier-label {
+  background-color: #3b82f6; /* C tier */
+}
+.tier-row:nth-child(5) .tier-label {
+  background-color: #a78bfa; /* D tier */
+}     
+
+.item-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-height: 120px;
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #1f2937;
+  border: 2px dashed #4b5563;
+  border-radius: 8px;
+}
+.uploaded-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: grab;
+}
+
+.controls {
+  margin-top:24px;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #7c3aed;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background-color: #6d28d9;
+}
+
+#image-upload {
+  display: none;
+}
+
+.uploaded-image:active {
+  cursor: grabbing;
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+.tier-content .uploaded-image {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  flex: 0 0 100px;
+  object-fit: cover;
+}
+
+.image-card{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex: 0 0 100px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #dc2626;
+  color: white;
+  font-size: 20px;
+  line-height: 26px;
+  cursor: pointer; 
+}
+
+.delete-button:hover {
+  background-color: #991b1b;
+}
+
+.title-input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.title-input:focus {
+  border-bottom: 2px solid #7c3aed;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.reset-buttom {
+  padding: 12px 20px;
+  border: 2px solid #6b7280;
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.reset-button:hover {
+  background-color: #374151;
+}
+
+
+.title-input {
+ width: 100%;
+ padding: 0;
+ border: none;
+ border-bottom: 2px solid transparent;
+ outline: none;
+ background-color: transparent;
+ color: white;
+ font-size: 48px;
+ font-weight: bold;
+ line-height: 1.2;
+}
+
+.title-input:hover,
+.title-input:focus {
+  border-bottom: 2px solid #7c3aed;
+}
+
+.tier-name-input {
+  flex: 0 0 120px;
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  font-size: inherit;
+  cursor: text;
+}
+
+.tier-name-input:focus {
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+.tier-row:nth-child(6) .tier-label {
+  background-color: #a78bfa;
+}
+
+.save-button {
+  padding: 12px 20px;
+  background-color: #059669;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media print {
+  .controls,
+  .item-bank,
+  .delete-button,
+  main > p {
+    display: none;
+  }
+
+  main {
+    padding: 20px;
+    background-color: white;
+    color: black;
+  }
+
+  .tier-input {
+    color: black;
+    border: none;
+  }
+
+  .tier-row {
+    margin-top: 8px;
+    break-inside: avoid;
+  }
+
+  * {
+    print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 20px;
+  }
+  .title-input {
+    font-size: 36px;
+  }
+  .controls {
+    flex-wrap: wrap;
+  }
+  .tier-row {
+    min-height: 90px;
+  }
+
+  .tier-label,
+  .tier-name-input {
+    width: 80px;
+    flex-basis: 80px;
+    font-size: 28px;
+  }
+
+  .uploaded-image,
+  .tier-content .uploaded-image,
+  .image-card {
+    width: 75px;
+    height: 75px;
+  }
+
+  .image-card,
+  .tier-content .uploaded-image {
+    flex-basis: 75px;
+  }
+
+  .tier-content {
+    padding: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
+  
+
